@@ -1,9 +1,9 @@
 <script>
 
-let notAGetterSetter = {whatever: 42};
+let notAGetterSetter = {whatever: 0x414141};
 
     function v2(v5) {
-        const v10 = Object();
+        const v10 = {};
         if (v5) {
             const v12 = {set:Array};
             const v14 = Object.defineProperty(v10,"length",v12);
@@ -23,5 +23,4 @@ let notAGetterSetter = {whatever: 42};
     for (let v32 = 0; v32 < 1000; v32++) {
         const v33 = v2(true);
     }
-
 <script>
