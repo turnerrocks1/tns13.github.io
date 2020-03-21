@@ -4,19 +4,19 @@ let print = alert;
 let a = [];
 function bar(a0) {
     let j = 0;
-    while (j++ < 1000) {
+    while (j++ < 10000) {
         a.splice(a0, 1000, 0, {}, {}, {}, {});
     }
 }
 
 function foo() {
-    for (let k = 0; k < 10; k++) {
+    for (let k = 0; k < 10000; k++) {
         bar(2**25);
     }
     bar();
 }
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 10000; i++) {
     foo();
 }
 alert(a)
