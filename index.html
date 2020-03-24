@@ -6,7 +6,7 @@ function v9() {
         let oobobj = {a : 42}
         v14.phantom = oobobj;
 
-        const v17 = [oobobj];
+        const v17 = [1];
         v17.toString = [];
         if (!v17) {
             return 0x41414141;
@@ -20,11 +20,11 @@ function v9() {
 
         let r;
         for (let i = 0; i < 2; i++) {
-            v19 = v17
+            v19 = {}
             r = v19
         }
 
-        return v17 ;
+        return r ;
     }
 
     for (let v27 = 0; v27 < 50000; v27++) {
