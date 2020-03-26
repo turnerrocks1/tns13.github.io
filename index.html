@@ -6,10 +6,10 @@ let print = alert;
   function v1(v2) {
    const v3 = v2.__proto__;
    v2.e = 0x4141414141;
-    for (let v9 = 0; v9 < 100000; v9++) {         
+    for (let v9 = 0; v9 < 10; v9++) {         
      v1(v3);
          }
-         for (let v20 = 0; v20 < 100000; v20++) {
+         for (let v20 = 0; v20 < 100; v20++) {
                 const v21 = v2.__proto__;
                const v24 = {a:13.37};
               const v26 = [v24];
