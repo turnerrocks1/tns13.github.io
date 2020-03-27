@@ -5,7 +5,7 @@ let print = alert;
  function main() {
   function v1(v2) {
    try {
-       const v3 = v2.__proto__;
+       let v3 = v2.__proto__;
    v2.e = 0x12341234;
     for (let v9 = 0; v9 < 10; v9++) {         v1(v3);
          }
@@ -19,7 +19,8 @@ let print = alert;
 
 }
     }
-    v1([1337]);
+let oob = {a:42}
+    v1(oob);
 }
 main();
 
